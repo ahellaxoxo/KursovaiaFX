@@ -6,3 +6,5 @@ Run -> Edit Configurations ->VM Options
 C:\Users\Averyxoxo\IdeaProjects\javafx-sdk-11.0.2\lib
 --add-modules
 javafx.controls,javafx.fxml
+-------------------------------
+

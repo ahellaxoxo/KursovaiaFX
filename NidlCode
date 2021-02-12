@@ -1,0 +1,179 @@
+package base;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
+
+
+
+public class test
+{
+    public File soundGame = new File("data/gameSound.wav");
+    public Clip clip;
+    public JFrame window = new JFrame("Super Owl");
+    private JButton bt = new JButton();
+    public JPanel myCartoon = new JPanel();
+    public AudioInputStream inAudio;
+    public JLabel[] cartoonItem = new JLabel[4];
+    public int fps = 100;
+    private int timeLine = 0;
+    private Timer fpsTimer;
+    public String[] arrCartoon = new String[] {"data/1.png", "data/2.png", "data/3.png", "data/4.png"};
+
+
+
+    public test()
+    {
+        window.setSize(800, 600);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.getContentPane().setBackground(Color.black);
+        window.setLayout(null);
+        window.setResizable(false);
+        window.setLocationRelativeTo(null);
+
+        soundConstuctor();
+        cartoonConstructor();
+        makeButton();
+
+        window.setVisible(true);
+    }
+
+
+    public void cartoonConstructor()
+    {
+        myCartoon.setBounds(368, 236, 63, 63);
+        //myCartoon.setBackground(new Color(0,0,0,0));
+        myCartoon.setLayout(null);
+        myCartoon.setOpaque(false);
+
+        for (int i = 0; i < arrCartoon.length; i++)
+        {
+            cartoonItem[i] = new JLabel();
+            cartoonItem[i].setBounds(0, 0, 63, 63);
+            ImageIcon enemyPic = new ImageIcon(arrCartoon[i]);
+            cartoonItem[i].setIcon(enemyPic);
+            cartoonItem[i].setHorizontalAlignment(SwingConstants.CENTER);
+            cartoonItem[i].setLayout(null);
+            cartoonItem[i].setVisible(false);
+            cartoonItem[i].setOpaque(false);
+
+            myCartoon.add(cartoonItem[i]);
+        }
+
+        window.add(myCartoon);
+        window.repaint();
+    }
+
+
+    public void soundConstuctor()
+    {
+        try
+        {
+            inAudio = AudioSystem.getAudioInputStream(soundGame);
+            clip = AudioSystem.getClip();
+            clip.open(inAudio);
+            clip.stop();
+
+            FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            gainControl.setValue((float) 1.0);
+        }
+        catch (Exception e)
+        {
+            //...
+        }
+    }
+
+
+    public void makeButton()
+    {
+        bt.setFont(new Font("Courier New", Font.PLAIN | Font.BOLD, 20));
+        bt.setMargin(new Insets(0,0,0,0));
+        bt.setBounds(320, 500, 160, 30);
+        bt.setText("Start");
+        bt.setLayout(null);
+        bt.setFocusable(false);
+
+        window.add(bt);
+
+        ActionListener actionListener = new GoListener();
+        bt.addActionListener(actionListener);
+    }
+
+
+    public class GoListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            soundStart();
+            cartoonStart();
+        }
+    }
+
+
+    private void cartoonStart()
+    {
+        fpsTimer = new Timer(fps, new fpsListener());
+        fpsTimer.start();
+    }
+
+
+    public class fpsListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            timeLine++;
+
+            if (timeLine > 0 && timeLine < arrCartoon.length)
+            {
+                cartoonItem[timeLine - 1].setVisible(false);
+                cartoonItem[timeLine].setVisible(true);
+            }
+
+            if (timeLine == arrCartoon.length)
+            {
+                cartoonItem[arrCartoon.length - 1].setVisible(false);
+                timeLine = 0;
+            }
+
+            window.repaint();
+            System.out.println(timeLine);
+        }
+    }
+
+
+    public void soundStart()
+    {
+        bt.setVisible(false);
+
+        try
+        {
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
+            clip.setFramePosition(0);
+            clip.start();
+        }
+        catch (Exception ex)
+        {
+            //...
+        }
+    }
+
+
+    public static void main(String[] args)
+    {
+        new test();
+    }
+}
