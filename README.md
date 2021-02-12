@@ -1,5 +1,5 @@
 # KursovaiaFX
-2 sem
+
 Run -> Edit Configurations ->VM Options
 
 --module-path
