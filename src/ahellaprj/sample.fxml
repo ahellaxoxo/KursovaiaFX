@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #F4F7FB;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ahellaprj.Controller">
+    <children>
+        <AnchorPane layoutX="199.0" prefHeight="68.0" prefWidth="601.0" style="-fx-background-color: #fff;">
+            <effect>
+                <DropShadow color="#0000001f" />
+            </effect>
+            <children>
+                <ImageView fitHeight="69.0" fitWidth="60.0" layoutX="24.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/liist.png" />
+                    </image>
+                </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="142.0" layoutX="444.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/puzzle.jpg" />
+               </image>
+            </ImageView>
+            <Text fx:id="txtHeaderUseless" layoutX="115.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сначала просмотри материал!" wrappingWidth="320.0">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+            <effect>
+                <DropShadow color="#00000040" />
+            </effect>
+            <children>
+                <ImageView fitHeight="97.0" fitWidth="82.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/logo.png" />
+                    </image>
+                </ImageView>
+                <Text fill="#b2b2b2" layoutX="99.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Программа для тестирования" textAlignment="CENTER" wrappingWidth="82.00000447034836">
+                    <font>
+                        <Font name="Montserrat Bold" size="11.0" />
+                    </font>
+                </Text>
+                <Text fill="#3c3c3c" layoutX="107.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Testin'">
+                    <font>
+                        <Font name="Panton Black Caps" size="17.0" />
+                    </font>
+                </Text>
+                <Separator focusTraversable="false" layoutX="14.0" layoutY="110.0" prefHeight="3.0" prefWidth="175.0" style="-fx-background-color: #ccc; -fx-border-style: solid; -fx-border-color: #333;">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Separator>
+                <Button fx:id="animalBtn" layoutX="11.0" layoutY="160.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: #fafafa; -fx-border-color: #ccc; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Animals">
+                    <font>
+                        <Font name="Montserrat Regular" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="repositionsBtn" layoutX="11.0" layoutY="241.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: #fafafa; -fx-border-color: #ccc; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Prepositions">
+                    <font>
+                        <Font name="Montserrat Regular" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="tableWareBtn" layoutX="11.0" layoutY="319.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="175.0" style="-fx-background-color: #fafafa; -fx-border-color: #ccc; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Tableware">
+                    <font>
+                        <Font name="Montserrat Regular" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button fx:id="exitBtn" layoutX="7.0" layoutY="436.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="175.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Выход" textFill="WHITE">
+                    <font>
+                        <Font name="Montserrat Regular" size="13.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Separator focusTraversable="false" layoutX="14.0" layoutY="396.0" prefHeight="3.0" prefWidth="175.0" style="-fx-background-color: #fafafa; -fx-border-style: solid; -fx-border-color: #ccc; -fx-border-width: 0;">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Separator>
+            </children>
+        </AnchorPane>
+      <ImageView fx:id="pngTableware" fitHeight="259.0" fitWidth="252.0" layoutX="534.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@images/tableware.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pngAnimals" fitHeight="333.0" fitWidth="320.0" layoutX="472.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@images/animals.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="pngPrepositions" fitHeight="296.0" fitWidth="261.0" layoutX="557.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@images/prepositions.png" />
+         </image>
+      </ImageView>
+        <Text fx:id="txtHeader" fill="#434343" layoutX="201.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Выбери тему слева для начала тестирования" wrappingWidth="621.8896484375">
+            <font>
+                <Font name="Montserrat Bold" size="29.0" />
+            </font>
+        </Text>
+        <RadioButton fx:id="radio_btn_1" layoutX="230.0" layoutY="182.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="364.0" textFill="#5e5e5e">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+            <toggleGroup>
+                <ToggleGroup fx:id="answers" />
+            </toggleGroup>
+        </RadioButton>
+        <Text fx:id="question_text" fill="#727272" layoutX="237.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="494.8199462890625">
+            <font>
+                <Font name="Montserrat Regular" size="14.0" />
+            </font>
+        </Text>
+        <RadioButton fx:id="radio_btn_2" layoutX="230.0" layoutY="215.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="194.0" textFill="#5e5e5e" toggleGroup="$answers">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="radio_btn_3" layoutX="230.0" layoutY="249.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="181.0" textFill="#5e5e5e" toggleGroup="$answers">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="radio_btn_4" layoutX="230.0" layoutY="286.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="194.0" textFill="#5e5e5e" toggleGroup="$answers">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+        </RadioButton>
+        <Button fx:id="answerBtn" layoutX="382.0" layoutY="430.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="175.0" style="-fx-background-color: #f7746a; -fx-border-color: #f7746a; -fx-border-radius: 5px;" stylesheets="@styles/main.css" text="Дальше" textFill="WHITE">
+            <font>
+                <Font name="Montserrat Regular" size="13.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+      <RadioButton fx:id="radio_btn_5" layoutX="230.0" layoutY="318.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="194.0" textFill="#5e5e5e" toggleGroup="$answers">
+         <font>
+            <Font name="Montserrat Regular" size="13.0" />
+         </font>
+      </RadioButton>
+      <Line endX="229.54290771484375" endY="180.5" startX="229.54290771484375" startY="339.75" strokeLineCap="ROUND" strokeWidth="2.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.43421053886413574" green="0.11659356951713562" blue="0.11659356951713562" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.7407407164573669" blue="0.7407407164573669" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9961685823754789">
+                     <color>
+                        <Color red="0.5789473652839661" green="0.5789473652839661" blue="0.5789473652839661" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5789473652839661" green="0.5789473652839661" blue="0.5789473652839661" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Line endX="750.039306640625" endY="549.666748046875" startX="-1.2715657248918433E-5" startY="549.666748046875" stroke="#ff6969" strokeWidth="100.0" />
+      <Polygon fill="WHITE" layoutX="245.0" layoutY="162.0" points="-20.710693359375, 19.37255859375, -10.710693359375, 19.37255859375, -15.460693359375, 9.87255859375" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fill="WHITE" layoutX="245.0" layoutY="319.0" points="-20.710693359375, 19.37255859375, -10.710693359375, 19.37255859375, -15.960693359375, 29.37255859375" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="toCont" layoutX="245.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Подтверди выбор темы - отметь любой из кружочков. Он может добавить тебе балл!" wrappingWidth="478.94483947753906" />
+      <ImageView fitHeight="121.0" fitWidth="138.0" layoutX="671.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/hint.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
